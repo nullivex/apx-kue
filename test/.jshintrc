@@ -26,7 +26,6 @@
     "beforeEach": false,
     "after": false,
     "afterEach": false,
-    "mocks": false,
-    "expect": false
+    "mocks": false
   }
 }

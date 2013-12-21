@@ -1,4 +1,5 @@
 'use strict';
+var expect = require('chai').expect
 
 describe('InitializerMongoose',function(){
   var APX = require('apx'), apx
