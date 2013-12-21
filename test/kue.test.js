@@ -1,3 +1,5 @@
+'use strict';
+
 describe('InitializerMongoose',function(){
   var APX = require('apx'), apx
   before(function(done){
