@@ -1,29 +1,38 @@
 'use strict';
 var expect = require('chai').expect
 
-describe('InitializerMongoose',function(){
-  var APX = require('apx'), apx
+describe('InitializerKue',function(){
+  var apx = require('apx')
   before(function(done){
-    apx = APX({
+    apx.once('ready',function(){
+      done()
+    })
+    apx.setup({
       sysLogLevel: 2,
       testing: true,
       cwd: __dirname,
-      tasks: 'tasks/*.js',
-      onReady: done
+      tasks: 'tasks/*.js'
     })
+    apx.start()
+  })
+  after(function(done){
+    apx.once('dead',function(){
+      done()
+    })
+    apx.stop()
   })
   it('should setup the job queue',function(done){
     var init = require('../lib/kue')
-    init.init(apx,function(){
-      expect(apx.kue).to.be.a('function')
-      expect(apx.jobs).to.be.an('object')
+    init.start(apx.instance,function(){
+      expect(apx.instance.kue).to.be.a('function')
+      expect(apx.instance.jobs).to.be.an('object')
       done()
     })
   })
   it('should load tasks',function(done){
     var init = require('../lib/kue')
-    init.init(apx,function(){
-      expect(apx.tasks.hello.loaded).to.equal(true)
+    init.start(apx.instance,function(){
+      expect(apx.instance.tasks.hello.loaded).to.equal(true)
       done()
     })
   })

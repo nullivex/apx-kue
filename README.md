@@ -12,10 +12,11 @@ $ npm install apx apx-kue
 ```
 
 ```js
-var APX = require('apx')
-var inst = APX({
+var apx = require('apx')
+apx.setup({
   initializers: 'apx-kue'
 })
+apx.start()
 ```
 
 ## Configuration
