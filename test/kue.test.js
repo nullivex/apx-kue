@@ -7,13 +7,12 @@ describe('InitializerKue',function(){
     apx.once('ready',function(){
       done()
     })
-    apx.setup({
+    apx.start({
       sysLogLevel: 2,
       testing: true,
       cwd: __dirname,
       tasks: 'tasks/*.js'
     })
-    apx.start()
   })
   after(function(done){
     apx.once('dead',function(){
