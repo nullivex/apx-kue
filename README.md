@@ -1,5 +1,16 @@
-apx-kue [![Build Status](https://travis-ci.org/snailjs/apx-kue.png?branch=master)](https://travis-ci.org/snailjs/apx-kue)
+APX Kue
 =======
+
+## Kado
+
+STOP AND READ THIS
+
+APX or Apex is no longer maintained and is superseded by Kado.
+
+A new package is available to handle all your JavaScript needs.
+See [kado.org](https://kado.org) for details.
+
+## Summary
 
 Kue initializer and job handler for APX API server
 

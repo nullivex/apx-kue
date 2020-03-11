@@ -1,6 +1,6 @@
 {
   "name": "apx-kue",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Kue initializer and job handler for APX API server",
   "homepage": "https://github.com/snailjs/apx-kue",
   "bugs": "https://github.com/snailjs/apx-kue/issues",
